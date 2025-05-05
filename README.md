@@ -1,182 +1,177 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>⚡BerMatModZ Access⚡</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación BerMatModZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Share Tech Mono', monospace;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
     }
     body {
-      background: radial-gradient(ellipse at center, #000428 0%, #004e92 100%);
-      color: #00ffcc;
+      background: linear-gradient(135deg, #050505, #0a0a23);
+      color: #00ffee;
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 20px;
+      align-items: center;
+      flex-direction: column;
     }
-    .container {
-      width: 100%;
-      max-width: 600px;
-      background: #111;
+    .verificacion-container {
+      background: rgba(10, 10, 30, 0.9);
       padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #00ffff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffee;
       text-align: center;
+      position: relative;
     }
-    .container img {
+    .verificacion-container img {
       width: 200px;
-      border-radius: 20px;
-      animation: vibrar 2s infinite alternate;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      animation: vibrar 2s infinite;
     }
     @keyframes vibrar {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.03); }
-    }
-    .input-group {
-      margin-top: 20px;
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(1deg); }
+      100% { transform: rotate(0deg); }
     }
     input[type="password"] {
       padding: 10px;
-      width: 70%;
       border: none;
       border-radius: 10px;
-      background: #222;
-      color: #00ffcc;
+      margin-top: 15px;
+      width: 100%;
+      background: #111;
+      color: #0ff;
       font-size: 16px;
       text-align: center;
     }
-    .show-pass {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #ccc;
+    .toggle-password {
+      margin-top: 5px;
+      cursor: pointer;
+      color: #aaa;
     }
     button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #00ffcc;
+      margin-top: 15px;
+      padding: 10px 25px;
       border: none;
+      background: #0ff;
       color: #000;
-      font-size: 16px;
+      font-weight: bold;
       border-radius: 10px;
       cursor: pointer;
     }
-    .hidden { display: none; }
-
-    /* Segunda pantalla */
-    #main-content {
-      text-align: left;
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #0ff;
+      font-size: 24px;
+    }
+    .contenedor-principal {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
     }
     .banner {
-      text-align: center;
       font-size: 24px;
       color: #0ff;
-      margin-bottom: 15px;
-      font-family: 'Orbitron', sans-serif;
-    }
-    .info-box {
-      background: #111;
-      border: 2px solid #00ffff;
-      padding: 15px;
+      text-shadow: 0 0 5px #0ff;
       margin-bottom: 20px;
-      border-radius: 15px;
-      color: #fff;
     }
-    .menus {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+    .info {
+      background: #111;
+      color: #0ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 15px #0ff;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
     }
     .menu-item {
-      flex: 1 1 calc(50% - 20px);
-      background: #222;
-      padding: 15px;
+      background: #111;
       border: 2px solid #0ff;
-      border-radius: 15px;
-      font-size: 14px;
-      color: #fff;
-      transition: 0.3s;
-    }
-    .menu-item:hover {
-      transform: scale(1.05);
-      background: #0ff;
-      color: #000;
-    }
-    @media screen and (max-width: 600px) {
-      .menu-item {
-        flex: 1 1 100%;
-      }
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px #0ff;
     }
   </style>
 </head>
 <body>
-  <div class="container" id="login">
-    <img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg" alt="BerMat Image" />
-    <h2 style="margin-top: 20px;">INGRESA CÓDIGO DE VERIFICACIÓN</h2>
-    <div class="input-group">
-      <input type="password" id="codeInput" placeholder="Código secreto" />
+  <div class="verificacion-container" id="verificacion">
+    <img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg" alt="BerMat Image">
+    <h2>Ingrese Código de Verificación</h2>
+    <input type="password" id="codigo" placeholder="Código">
+    <div class="toggle-password" onclick="togglePassword()">Mostrar código</div>
+    <button onclick="verificarCodigo()">Verificar</button>
+    <div class="social-icons">
+      <a href="https://wa.me/51937556459" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/anthzberrocal" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/anthzberrocal" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/anthzberrocal" target="_blank"><i class="fab fa-github"></i></a>
     </div>
-    <div class="show-pass">
-      <input type="checkbox" onclick="togglePassword()"> Mostrar código
-    </div>
-    <button onclick="verifyCode()">Ingresar</button>
-  </div>
-
-  <div class="container hidden" id="main-content">
-    <div class="banner">⚡BIENVENIDO A BERMATMODZ - ZONA PRIVADA DE CIBERATAQUE⚡</div>
-    <div class="info-box">
-      <strong>Creador:</strong> Anth'Zz Berrocal<br>
+  </div>  <div class="contenedor-principal" id="contenido">
+    <div class="banner">⚡Bienvenido a BerMatModZ - Mundo Hacker⚡</div>
+    <div class="info">
+      <strong>Nombre:</strong> Anth'Zz Berrocal<br>
       <strong>Alias:</strong> BerMatModZ<br>
-      <strong>Ubicación:</strong> Andahuaylas<br>
-      <strong>Especialidad:</strong> Ciberseguridad & Programación<br>
-      <strong>Contacto:</strong> <br>
-      WhatsApp: 937556459<br>
-      Proyecto: ⚡BerMat-Bot MD🔥<br>
+      <strong>Ubicación:</strong> Andahuaylas, Perú<br>
+      <strong>Especialidad:</strong> Bots, Ciberseguridad, Inteligencia Artificial<br>
+      <strong>Proyectos:</strong> ⚡BerMat-Bot MD🔥, BerMat_Mods, FAMA<br>
+      <strong>Meta:</strong> Ser el hacker más temido del mundo
     </div>
-
-    <div class="menus">
-      <!-- 20 menús de hacking -->
-      <div class="menu-item">Hackeo de WhatsApp</div>
+    <div class="menu-grid">
+      <div class="menu-item">Hackear WhatsApp</div>
       <div class="menu-item">Clonación de WhatsApp</div>
-      <div class="menu-item">Bloqueo remoto de números</div>
-      <div class="menu-item">DoS a servidores débiles</div>
-      <div class="menu-item">Rastreo de IP geolocalizada</div>
-      <div class="menu-item">Bypass de autenticación</div>
-      <div class="menu-item">Ataque de fuerza bruta</div>
-      <div class="menu-item">Escáner de puertos avanzados</div>
-      <div class="menu-item">Keylogger remoto</div>
-      <div class="menu-item">Sniffer de red</div>
-      <div class="menu-item">Suplantación de identidad</div>
-      <div class="menu-item">Hacking de Instagram</div>
-      <div class="menu-item">Phishing avanzado</div>
-      <div class="menu-item">Troyano personalizado</div>
-      <div class="menu-item">Rooting y exploits</div>
-      <div class="menu-item">Cifrados invisibles</div>
-      <div class="menu-item">Control de cámaras</div>
-      <div class="menu-item">DoXing completo</div>
-      <div class="menu-item">Análisis de vulnerabilidades</div>
-      <div class="menu-item">Despliegue de payloads</div>
+      <div class="menu-item">Hackear Facebook</div>
+      <div class="menu-item">Hackear Instagram</div>
+      <div class="menu-item">Bloqueo Remoto de Números</div>
+      <div class="menu-item">Control de Cámara Web</div>
+      <div class="menu-item">Rastreo de Ubicación IP</div>
+      <div class="menu-item">DoS/DDoS Simulado</div>
+      <div class="menu-item">Sniffing de Red Local</div>
+      <div class="menu-item">Explorador de Puertos</div>
+      <div class="menu-item">Bypass de Login</div>
+      <div class="menu-item">Keylogger Simulado</div>
+      <div class="menu-item">Inyección SQL</div>
+      <div class="menu-item">Ataque XSS</div>
+      <div class="menu-item">Hackear Gmail (Fake)</div>
+      <div class="menu-item">Doxeo Automático</div>
+      <div class="menu-item">Phishing Generator</div>
+      <div class="menu-item">WebShell Installer</div>
+      <div class="menu-item">Interceptar Mensajes SMS</div>
+      <div class="menu-item">Hackear Telegram (Fake)</div>
     </div>
-  </div>
-
-  <script>
-    function togglePassword() {
-      const input = document.getElementById("codeInput");
-      input.type = input.type === "password" ? "text" : "password";
-    }
-    function verifyCode() {
-      const input = document.getElementById("codeInput").value;
-      if (input === "BerMat123") {
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("main-content").classList.remove("hidden");
+  </div>  <script>
+    function verificarCodigo() {
+      const codigo = document.getElementById("codigo").value;
+      if (codigo === "BerMat123") {
+        document.getElementById("verificacion").style.display = "none";
+        document.getElementById("contenido").style.display = "flex";
       } else {
-        alert("Código incorrecto. Intenta de nuevo.");
+        alert("Código incorrecto. Intenta nuevamente.");
       }
     }
-  </script>
-</body>
+    function togglePassword() {
+      const input = document.getElementById("codigo");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script></body>
 </html>
