@@ -10,11 +10,18 @@
       font-family: 'Courier New', Courier, monospace;
       background: #111111;
       color: #00ff00;
+      animation: backgroundAnimation 10s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background-color: #111111; }
+      50% { background-color: #222222; }
+      100% { background-color: #111111; }
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
 
-    .login-container, .main-container {
+    .login-container {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -23,41 +30,42 @@
       padding: 20px;
     }
 
-    .login-box, .info-box, .menu-box {
+    .login-box {
       background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 20px #ff0000;
       max-width: 600px;
       width: 90%;
       margin: 10px 0;
+      text-align: center;
     }
 
     .login-box input[type="password"], .login-box input[type="checkbox"] {
-      padding: 10px;
+      padding: 12px;
       margin-top: 10px;
       width: 100%;
-      border-radius: 5px;
+      border-radius: 8px;
       border: none;
-      font-size: 18px;
+      font-size: 20px;
       background-color: #222;
       color: #00ff00;
     }
 
     .login-box button {
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 18px;
+      margin-top: 15px;
+      padding: 12px;
+      font-size: 20px;
       background-color: #ff0000;
       color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    h1, h2, h3 {
-      text-align: center;
-      color: #ff0000;
+    .login-box button:hover {
+      transform: scale(1.05);
     }
 
     .banner {
@@ -67,14 +75,27 @@
       border-radius: 12px;
       margin: 10px 0;
       box-shadow: 0 0 10px #ff0000;
-      text-align: center;
+      animation: bannerAnimation 2s infinite;
+    }
+
+    @keyframes bannerAnimation {
+      0% { color: #ff0000; }
+      50% { color: #ff8000; }
+      100% { color: #ff0000; }
     }
 
     .login-box img {
       width: 100%;
       height: auto;
       border-radius: 12px;
-      margin-top: 15px;
+      margin-top: 20px;
+      animation: imageAnimation 3s infinite;
+    }
+
+    @keyframes imageAnimation {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     .menu-grid {
@@ -110,17 +131,6 @@
       background: #222;
     }
 
-    .menu-item h3 {
-      font-size: 24px;
-      color: #ff0000;
-      font-weight: bold;
-    }
-
-    .menu-item p {
-      font-size: 16px;
-      color: #ffffff;
-    }
-
     .contact-box {
       display: flex;
       justify-content: space-evenly;
@@ -149,8 +159,8 @@
 <body>
   <div class="login-container" id="login">
     <div class="login-box">
-      <h1>Verificación de Acceso</h1>
-      <p>Introduce el código para acceder al sistema:</p>
+      <h1>Acceso BerMatModZ</h1>
+      <p>Por favor ingresa el código de acceso para continuar con el sistema:</p>
       <input type="password" id="code" placeholder="Código de acceso">
       <label><input type="checkbox" onclick="toggleVisibility()"> Mostrar código</label>
       <button onclick="verifyCode()">Ingresar</button>
@@ -184,50 +194,37 @@
           <h3>Doxeo de objetivo</h3>
           <p>Obtención y filtrado de información personal de un objetivo.</p>
         </div>
-        <div class="menu-item">
-          <h3>Ataque DDoS</h3>
-          <p>Denegación de servicio distribuido para sobrecargar servidores.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Bloqueo de números</h3>
-          <p>Bloqueo de números telefónicos mediante diferentes técnicas.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Bypass de Seguridad</h3>
-          <p>Evasión de mecanismos de seguridad en plataformas digitales.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Exploración de puertos</h3>
-          <p>Exploración y escaneo de puertos en redes para identificar vulnerabilidades.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Sniffing de redes</h3>
-          <p>Intercepción de tráfico de red para capturar paquetes sensibles.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Interceptación de tráfico</h3>
-          <p>Captura de datos entre un usuario y servidor para obtener credenciales.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Phishing avanzado</h3>
-          <p>Creación de sitios web falsos para robar información sensible.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Hackeo de redes sociales</h3>
-          <p>Acceso no autorizado a plataformas sociales como Facebook, Instagram, Twitter, etc.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Manipulación de base de datos</h3>
-          <p>Extracción o modificación de datos en bases de datos sin autorización.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Inyección SQL</h3>
-          <p>Exploit de vulnerabilidades en bases de datos usando inyecciones SQL.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Hackeo de correos electrónicos</h3>
-          <p>Acceso a cuentas de correo mediante técnicas de hacking específicas.</p>
-        </div>
-        <div class="menu-item">
-          <h3>Hackeo de contraseñas</h3>
-          <p>Cracking de contraseñas de usuarios mediante
+        <!-- Añadir más menús aquí si lo deseas -->
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <a href="https://wa.me/937556459" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/WhatsApp.svg" alt="WhatsApp">
+        <p>Contáctame por WhatsApp</p>
+      </a>
+      <a href="https://github.com/AnthZzBerrocal" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+        <p>Visita mi GitHub</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleVisibility() {
+      var codeInput = document.getElementById('code');
+      codeInput.type = (codeInput.type === 'password') ? 'text' : 'password';
+    }
+
+    function verifyCode() {
+      var inputCode = document.getElementById('code').value;
+      if (inputCode === "BerMat123") {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+      } else {
+        alert('Código incorrecto. Intenta de nuevo.');
+      }
+    }
+  </script>
+</body>
+</html>
