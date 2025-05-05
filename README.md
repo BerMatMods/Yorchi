@@ -2,172 +2,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡BerMatModZ - Access Terminal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <title>⚡ BerMatModZ - Panel Hacker Extendido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Rajdhani', sans-serif;
-      background: linear-gradient(145deg, #070011, #1a0028);
-      color: #00ffe1;
-      overflow-x: hidden;
-    }.banner {
-  font-size: 36px;
+      font-family: 'Share Tech Mono', monospace;
+      background: linear-gradient(to right, #000428, #004e92);
+      color: #00ffee;
+      padding: 30px 15px;
+      min-height: 100vh;
+    }h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f5ff;
+  text-shadow: 2px 2px 6px #00ffff;
+  font-size: 32px;
   text-align: center;
-  padding: 30px 10px;
-  color: #ff00ff;
-  background: linear-gradient(90deg, #0a0010, #1a0033);
-  text-shadow: 0 0 20px #00ffcc, 0 0 10px #ff00ff;
-  border-bottom: 4px solid #ff0055;
-  box-shadow: 0 0 25px #ff00ff;
-  letter-spacing: 2px;
+  animation: flicker 2s infinite;
 }
 
-.center {
-  text-align: center;
-  margin-top: 8vh;
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
 
-.access-img {
-  width: 250px;
-  max-width: 90%;
-  border: 3px solid #00ffc3;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #00ffc3;
-}
-
-input, button {
-  margin: 10px;
-  padding: 10px;
-  font-size: 18px;
-  border: 2px solid #00ffc3;
-  border-radius: 10px;
-  background: black;
-  color: #00ffc3;
-  font-family: 'Share Tech Mono', monospace;
-}
-
-button:hover {
-  background: #00ffc3;
-  color: black;
-  box-shadow: 0 0 10px #00ffc3;
-}
-
-.hidden { display: none; }
-
-.info, .menu {
-  background: #0f001f;
-  border: 2px solid #00ffc3;
-  margin: 20px auto;
-  padding: 20px;
+.info {
+  background: rgba(0, 31, 45, 0.8);
+  border: 2px dashed #00ffee;
+  padding: 25px;
   border-radius: 15px;
-  width: 90%;
+  margin: 30px auto;
   max-width: 800px;
-  box-shadow: 0 0 20px #ff00ff;
-  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.info p {
+  margin: 6px 0;
+}
+
+.menus {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .menu {
-  background: linear-gradient(145deg, #1f002f, #001122);
-  border-left: 5px solid #ff0055;
-  border-right: 5px solid #00ffcc;
-  color: #f0f0f0;
-  font-size: 18px;
-  margin-bottom: 20px;
-  position: relative;
-  padding-left: 100px;
+  background: #010d14;
+  border: 2px solid #00ffee;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #00ffee;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #00ffff;
 }
 
 .menu img {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 70px;
-  height: auto;
+  width: 100%;
+  max-height: 180px;
   border-radius: 10px;
-  border: 1px solid #00ffc3;
+  margin-bottom: 15px;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  color: #00ffc3;
-  background: #000;
-  font-family: 'Share Tech Mono', monospace;
+.menu h2 {
+  font-size: 20px;
+  color: #00f5ff;
+  margin: 10px 0 0;
 }
 
   </style>
 </head>
 <body>
-  <div class="banner">⚡ 𝑩𝑬𝑹𝑴𝑨𝑻𝑴𝑶𝑫𝒁 𝑨𝑪𝑪𝑬𝑺𝑺 (HACK) 𝑺𝒀𝑺𝑻𝑬𝑴 ⚡<br>✦ Bienvenido al dominio de la ciberinteligencia ✦</div>  <div class="center" id="access">
-    <img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg" alt="Imagen Verificación" class="access-img">
-    <h2>🔐 Ingresa el código de acceso</h2>
-    <input type="password" id="code" placeholder="Código secreto">
-    <br>
-    <button onclick="verificarCodigo()">ENTRAR A LA DIMENSIÓN BERMAT</button>
-  </div>  <div class="hidden" id="contenido">
-    <div class="info">
-      <h2>✅ ACCESO CONCEDIDO A ⚡BERMATMODZ🔥</h2>
-      <p><strong>Nombre:</strong> Anth'Zz Berrocal</p>
-      <p><strong>Alias:</strong> BerMatModZ</p>
-      <p><strong>Zona:</strong> Andahuaylas, Perú</p>
-      <p><strong>Proyectos:</strong> BerMat_Mods, ⚡BerMat-Bot MD🔥, F.A.M.A</p>
-      <p><strong>Especialidad:</strong> Bots de WhatsApp, Inteligencia Artificial, Ciberseguridad</p>
-    </div><div id="menu-container"></div>
-
-  </div>  <footer>
-    Creado por: Anth'Zz Berrocal | Alias: BerMatModZ | "El código es mi espada, la red es mi reino."
-  </footer>  <script>
-    const codCorrecto = "BERMAT123";
-
-    function verificarCodigo() {
-      const input = document.getElementById("code").value;
-      if (input === codCorrecto) {
-        document.getElementById("access").classList.add("hidden");
-        document.getElementById("contenido").classList.remove("hidden");
-        generarMenus();
-      } else {
-        alert("Código incorrecto. Intenta nuevamente.");
-      }
-    }
-
-    function generarMenus() {
-      const titulos = [
-        "💣 Hackeo Avanzado de WhatsApp",
-        "📸 Control Total de Instagram",
-        "📘 Infiltración Facebook Pro",
-        "✉️ Espionaje Gmail/Outlook",
-        "🔐 Clonación Profesional de WhatsApp",
-        "📴 Bloqueo Remoto de Números",
-        "🧠 IA Ciberespía (AutoResponder Hack)",
-        "🕵️ Hack TikTok Inteligente",
-        "🌐 Hackeo de Cuentas VPN",
-        "🔍 Escaneo Profundo de Redes Sociales",
-        "🌌 Ataque DDoS Personalizado",
-        "🔎 Localización por IP y GPS",
-        "📦 Intercepción de Paquetes (MITM)",
-        "📂 Doxing Automático (Info Target)",
-        "🛠️ Generador de Exploits Automático",
-        "🧨 Phishing Multiplataforma",
-        "⚙️ Clonador de Cuentas Simulado",
-        "🔒 ByPass de 2FA / OTP",
-        "📱 Suplantación de Identidad",
-        "🧬 Análisis Forense Digital"
-      ];
-
-      const container = document.getElementById("menu-container");
-      titulos.forEach(title => {
-        const div = document.createElement("div");
-        div.className = "menu";
-
-        const img = document.createElement("img");
-        img.src = "https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg";
-
-        div.appendChild(img);
-        div.appendChild(document.createTextNode(`> ${title} // by BerMatModZ`));
-        container.appendChild(div);
-      });
-    }
-  </script></body>
+  <h1>⚔️ PANTALLA SECRETA DE BERMATMODZ ⚔️</h1>  <div class="info">
+    <p><strong>Nombre real:</strong> Anth'Zz Berrocal</p>
+    <p><strong>Alias en el mundo cibernético:</strong> BerMatModZ</p>
+    <p><strong>Ubicación:</strong> Andahuaylas, Perú</p>
+    <p><strong>Grupo:</strong> F.A.M.A (Fuerza Anónima de Mentes Avanzadas)</p>
+    <p><strong>Especialidades:</strong> Ciberseguridad, Inteligencia Artificial, Ingeniería Social, Hackeo Ético</p>
+    <p><strong>Proyectos destacados:</strong> ⚡BerMat-Bot MD🔥, BerMat_Mods, Clonaciones, Bots personalizados IA</p>
+    <p><strong>Reconocido por:</strong> Simulaciones avanzadas, arte hacker visual, bots de WhatsApp, amor a la tecnología</p>
+    <p><strong>Visión:</strong> Crear herramientas que fusionen el arte visual con el poder de la programación y el hacking ético.</p>
+  </div>  <div class="menus">
+" + "
+".join([f"    <div class="menu"><img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg"><h2>{titulo}</h2></div>" for titulo in [
+    "Hackeo de WhatsApp",
+    "Clonación Total de Redes",
+    "Sniffer WiFi Remoto",
+    "Inyección SQL y Bypass",
+    "Bloqueo/Desbloqueo Números",
+    "Keylogger Silencioso",
+    "Simulación de Hack Élite",
+    "Obtención de IP y Doxeo",
+    "Fuerza Bruta Redes Sociales",
+    "Panel F.A.M.A Pro",
+    "Hackeo de Telegram",
+    "Suplantación de Identidad",
+    "Control Total de Sistema",
+    "Borrar Huellas Digitales",
+    "Ataque MITM Avanzado",
+    "Hackeo de Cámaras IP",
+    "Hacking Ético Social",
+    "Romper Patrones de Bloqueo",
+    "Desencriptación de Mensajes",
+    "Simulador de Phishing",
+    "Ataques de Denegación DDOS",
+    "Falsificación de Identidades",
+    "Cifrado Avanzado de Archivos",
+    "Escaneo de Puertos en Red",
+    "Explotación de Vulnerabilidades",
+    "Hacking Móvil Remoto",
+    "Botnet Builder Pro",
+    "Bypass Antivirus y Firewalls",
+    "Hack de Credenciales Gmail",
+    "Troyano Invisible para Android",
+    "Robo de Tokens Discord",
+    "Interceptar Tráfico Red",
+    "Clonación de Apps Bancarias",
+    "Shell Reverse con Netcat",
+    "Control Total con Metasploit",
+    "Explotar Bugs de Apps",
+    "Keylogger Invisible de Voz",
+    "DeepWeb Scanner",
+    "Panel de Ataque MultiObjetivo",
+    "BerMat Cloner v2.5"
+  ]]) + "
+  </div>
+</body>
 </html>
