@@ -3,31 +3,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⚡BerMatModZ - Access Terminal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Major+Mono+Display&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Share Tech Mono', monospace;
-      background: black;
+      background: linear-gradient(145deg, #0c0014, #140021);
       color: #00ffc3;
       overflow-x: hidden;
-    }.matrix-bg {
-  background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') no-repeat center center fixed;
-  background-size: cover;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
-  opacity: 0.2;
-}
-
-.banner {
+    }.banner {
   font-family: 'Orbitron', sans-serif;
-  font-size: 32px;
+  font-size: 36px;
   text-align: center;
-  padding: 20px;
+  padding: 30px 10px;
   color: #ff00ff;
-  text-shadow: 0 0 15px #00ffc3;
+  background: linear-gradient(90deg, #110011, #220022);
+  text-shadow: 0 0 20px #00ffcc, 0 0 10px #ff00ff;
+  border-bottom: 4px solid #ff0055;
+  box-shadow: 0 0 25px #ff00ff;
+  letter-spacing: 2px;
 }
 
 .center {
@@ -51,6 +45,7 @@ input, button {
   border-radius: 10px;
   background: black;
   color: #00ffc3;
+  font-family: 'Major Mono Display', monospace;
 }
 
 button:hover {
@@ -62,22 +57,23 @@ button:hover {
 .hidden { display: none; }
 
 .info, .menu {
-  background: #111;
+  background: #0f001f;
   border: 2px solid #00ffc3;
   margin: 20px auto;
   padding: 20px;
   border-radius: 15px;
   width: 90%;
   max-width: 800px;
-  box-shadow: 0 0 15px #00ffc3;
+  box-shadow: 0 0 20px #ff00ff;
+  font-family: 'Major Mono Display', monospace;
 }
 
 .menu {
-  background: linear-gradient(145deg, #220022, #001122);
+  background: linear-gradient(145deg, #1f002f, #001122);
   border-left: 5px solid #ff0055;
   border-right: 5px solid #00ffcc;
   color: #f0f0f0;
-  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -87,12 +83,13 @@ footer {
   font-size: 14px;
   color: #00ffc3;
   background: #000;
+  font-family: 'Share Tech Mono', monospace;
 }
 
   </style>
 </head>
 <body>
-  <div class="matrix-bg"></div>  <div class="banner">⚠️ INGRESO AL SISTEMA DE BERMATMODZ ⚠️</div>  <div class="center" id="access">
+  <div class="banner">⚡ 𝑩𝑬𝑹𝑴𝑨𝑻𝑴𝑶𝑫𝒁 𝑨𝑪𝑪𝑬𝑺𝑺 𝑺𝒀𝑺𝑻𝑬𝑴 ⚡<br>✦ Bienvenido al dominio de la ciberinteligencia ✦</div>  <div class="center" id="access">
     <img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg" alt="Imagen Verificación" class="access-img">
     <h2>🔐 Ingresa el código de acceso</h2>
     <input type="password" id="code" placeholder="Código secreto">
