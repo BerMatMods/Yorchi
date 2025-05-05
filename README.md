@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #1f2c36, #204052, #283f53);
       color: #00ffff;
     }@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
@@ -65,6 +65,13 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.login-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -86,6 +93,17 @@ h1, h2, h3 {
   background-color: #111;
 }
 
+.info-box {
+  text-align: center;
+  margin-bottom: 20px;
+  background: #1b2a33;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.menu-box {
+  background: #1b2a33;
+}
+
   </style>
 </head>
 <body>
@@ -96,6 +114,7 @@ h1, h2, h3 {
       <input type="password" id="code" placeholder="Código de acceso">
       <label><input type="checkbox" onclick="toggleVisibility()"> Mostrar código</label>
       <button onclick="verifyCode()">Ingresar</button>
+      <img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg" alt="Imagen de verificación" />
     </div>
   </div>  <div class="main-container" id="main" style="display:none">
     <div class="banner">⚡ Bienvenido al sistema BerMatModZ ⚡</div>
@@ -108,7 +127,48 @@ h1, h2, h3 {
       <p><strong>Especialidades:</strong> Bots de WhatsApp, Ciberseguridad, Automatización, Estética Hacker</p>
     </div><div class="menu-box">
   <h2>Menús de Ciberataques</h2>
-  <div class="menu-grid" id="menu-list"></div>
+  <div class="menu-grid" id="menu-list">
+    <div class="menu-item">
+      <h3>Hackeo de WhatsApp</h3>
+      <p>Herramienta especializada para hackear cuentas de WhatsApp usando técnicas avanzadas.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Clonación de WhatsApp</h3>
+      <p>Clonación de cuentas de WhatsApp, con acceso a conversaciones y archivos multimedia.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Doxeo de objetivo</h3>
+      <p>Obtención y filtrado de información personal de un objetivo.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Ataque DDoS</h3>
+      <p>Denegación de servicio distribuido para sobrecargar servidores.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Bloqueo de números</h3>
+      <p>Bloqueo de números telefónicos mediante diferentes técnicas.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Bypass de Seguridad</h3>
+      <p>Evasión de mecanismos de seguridad en plataformas digitales.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Exploración de puertos</h3>
+      <p>Exploración y escaneo de puertos en redes para identificar vulnerabilidades.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Sniffing de redes</h3>
+      <p>Intercepción de tráfico de red para capturar paquetes sensibles.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Interceptación de tráfico</h3>
+      <p>Captura de datos entre un usuario y servidor para obtener credenciales.</p>
+    </div>
+    <div class="menu-item">
+      <h3>Phishing avanzado</h3>
+      <p>Creación de sitios web falsos para robar información sensible.</p>
+    </div>
+  </div>
 </div>
 
   </div>  <script>
@@ -121,7 +181,6 @@ h1, h2, h3 {
       if (code === validCode) {
         loginDiv.style.display = "none";
         mainDiv.style.display = "flex";
-        renderMenus();
       } else {
         alert("Código incorrecto. Intenta nuevamente.");
       }
@@ -130,59 +189,6 @@ h1, h2, h3 {
     function toggleVisibility() {
       const input = document.getElementById("code");
       input.type = input.type === "password" ? "text" : "password";
-    }
-
-    const menuItems = [
-      "Hackeo de WhatsApp",
-      "Clonación de WhatsApp",
-      "Doxeo de objetivo",
-      "Ataque DDoS",
-      "Bloqueo de números",
-      "Bypass de Seguridad",
-      "Exploración de puertos",
-      "Sniffing de redes",
-      "Interceptación de tráfico",
-      "Phishing avanzado",
-      "Robo de cookies",
-      "Keylogger remoto",
-      "Control de cámara",
-      "Acceso remoto a PC",
-      "Fuerza bruta de contraseñas",
-      "Secuestro de sesiones",
-      "Hackeo de Instagram",
-      "Hackeo de Facebook",
-      "Hackeo de TikTok",
-      "Hackeo de Gmail",
-      "Escaneo de vulnerabilidades",
-      "Obtención de IP",
-      "Geo-localización",
-      "Rastreo por número",
-      "Acceso a base de datos",
-      "Suplantación de identidad",
-      "Cracking de contraseñas WiFi",
-      "Troyanos personalizados",
-      "Secuestro de navegador",
-      "Inyección SQL",
-      "Creación de binarios maliciosos",
-      "Hackeo por Bluetooth",
-      "Ataque MITM",
-      "Backdoor persistente",
-      "Hackeo de cámaras IP",
-      "Análisis de malware",
-      "Desencriptación de mensajes",
-      "Escaneo de dispositivos en red",
-      "Falsificación de GPS",
-      "Ocultamiento de identidad"
-    ];
-
-    function renderMenus() {
-      const menuList = document.getElementById("menu-list");
-      menuList.innerHTML = menuItems.map(item => `
-        <div class="menu-item">
-          <h3>${item}</h3>
-          <p>Herramienta especializada para ${item.toLowerCase()} usando técnicas avanzadas.</p>
-        </div>
-      `).join('');
     }
   </script></body>
 </html>
