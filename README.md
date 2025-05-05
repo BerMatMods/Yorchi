@@ -3,21 +3,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⚡BerMatModZ - Access Terminal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Major+Mono+Display&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background: linear-gradient(145deg, #0c0014, #140021);
-      color: #00ffc3;
+      font-family: 'Rajdhani', sans-serif;
+      background: linear-gradient(145deg, #070011, #1a0028);
+      color: #00ffe1;
       overflow-x: hidden;
     }.banner {
-  font-family: 'Orbitron', sans-serif;
   font-size: 36px;
   text-align: center;
   padding: 30px 10px;
   color: #ff00ff;
-  background: linear-gradient(90deg, #110011, #220022);
+  background: linear-gradient(90deg, #0a0010, #1a0033);
   text-shadow: 0 0 20px #00ffcc, 0 0 10px #ff00ff;
   border-bottom: 4px solid #ff0055;
   box-shadow: 0 0 25px #ff00ff;
@@ -45,7 +44,7 @@ input, button {
   border-radius: 10px;
   background: black;
   color: #00ffc3;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 button:hover {
@@ -65,7 +64,7 @@ button:hover {
   width: 90%;
   max-width: 800px;
   box-shadow: 0 0 20px #ff00ff;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .menu {
@@ -74,7 +73,19 @@ button:hover {
   border-right: 5px solid #00ffcc;
   color: #f0f0f0;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.menu img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 70px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #00ffc3;
 }
 
 footer {
@@ -89,7 +100,7 @@ footer {
   </style>
 </head>
 <body>
-  <div class="banner">⚡ 𝑩𝑬𝑹𝑴𝑨𝑻𝑴𝑶𝑫𝒁 𝑨𝑪𝑪𝑬𝑺𝑺 𝑺𝒀𝑺𝑻𝑬𝑴 ⚡<br>✦ Bienvenido al dominio de la ciberinteligencia ✦</div>  <div class="center" id="access">
+  <div class="banner">⚡ 𝑩𝑬𝑹𝑴𝑨𝑻𝑴𝑶𝑫𝒁 𝑨𝑪𝑪𝑬𝑺𝑺 (HACK) 𝑺𝒀𝑺𝑻𝑬𝑴 ⚡<br>✦ Bienvenido al dominio de la ciberinteligencia ✦</div>  <div class="center" id="access">
     <img src="https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg" alt="Imagen Verificación" class="access-img">
     <h2>🔐 Ingresa el código de acceso</h2>
     <input type="password" id="code" placeholder="Código secreto">
@@ -123,23 +134,38 @@ footer {
 
     function generarMenus() {
       const titulos = [
-        "💥 Inyección SQL en Portales Web",
-        "📡 Escaneo de Redes Anónimas",
-        "🔓 Clonación Avanzada de WhatsApp",
-        "🧠 Hack AI - Respuestas Automáticas",
-        "🛰️ Satélite Tracker OSINT",
-        "🧬 Phishing Personalizado por Región",
-        "⛓️ DDoS Controlador BerMat_F.A.M.A",
-        "⚙️ Panel CiberAtaque Multitarget",
-        "💻 Console Exploit Builder",
-        "🔍 Análisis Deep Web Pro"
+        "💣 Hackeo Avanzado de WhatsApp",
+        "📸 Control Total de Instagram",
+        "📘 Infiltración Facebook Pro",
+        "✉️ Espionaje Gmail/Outlook",
+        "🔐 Clonación Profesional de WhatsApp",
+        "📴 Bloqueo Remoto de Números",
+        "🧠 IA Ciberespía (AutoResponder Hack)",
+        "🕵️ Hack TikTok Inteligente",
+        "🌐 Hackeo de Cuentas VPN",
+        "🔍 Escaneo Profundo de Redes Sociales",
+        "🌌 Ataque DDoS Personalizado",
+        "🔎 Localización por IP y GPS",
+        "📦 Intercepción de Paquetes (MITM)",
+        "📂 Doxing Automático (Info Target)",
+        "🛠️ Generador de Exploits Automático",
+        "🧨 Phishing Multiplataforma",
+        "⚙️ Clonador de Cuentas Simulado",
+        "🔒 ByPass de 2FA / OTP",
+        "📱 Suplantación de Identidad",
+        "🧬 Análisis Forense Digital"
       ];
 
       const container = document.getElementById("menu-container");
       titulos.forEach(title => {
         const div = document.createElement("div");
         div.className = "menu";
-        div.textContent = `> ${title}`;
+
+        const img = document.createElement("img");
+        img.src = "https://i.postimg.cc/Y9xCpGMC/Mag-Pic-20250501-185936660-3.jpg";
+
+        div.appendChild(img);
+        div.appendChild(document.createTextNode(`> ${title} // by BerMatModZ`));
         container.appendChild(div);
       });
     }
