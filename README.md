@@ -2,108 +2,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎉 Feliz Cumpleaños YuYi 🎉</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Indie+Flower&family=Shadows+Into+Light&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>🎉 Feliz Cumpleaños Yuyi 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Shadows+Into+Light&family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
-      background-size: 400% 400%;
-      animation: gradient 10s ease infinite;
+      background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+      font-family: 'Indie Flower', cursive;
       color: #fff;
-    }@keyframes gradient {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-.container {
-  padding: 30px;
-  text-align: center;
-}
-
-h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 3em;
-  color: #fff0f5;
-  text-shadow: 2px 2px 6px #ff69b4;
-}
-
-.click-btn {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.3em;
-  font-weight: bold;
-  background: #ffffff44;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  color: #fff;
-  transition: 0.3s ease;
-  font-family: 'Indie Flower', cursive;
-}
-
-.click-btn:hover {
-  background: #fff;
-  color: #ff69b4;
-}
-
-.mensaje {
-  margin-top: 40px;
-  display: none;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 25px;
-  border-radius: 15px;
-  font-size: 1.2em;
-  line-height: 1.7em;
-  font-family: 'Shadows Into Light', cursive;
-  box-shadow: 0 0 10px #ff69b4;
-}
-
-.info {
-  margin-top: 30px;
-  font-size: 1em;
-  color: #f5f5f5;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.emoji {
-  font-size: 1.3em;
-}
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      text-align: center;
+      margin-top: 80px;
+      padding: 30px;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4em;
+      color: #ff6ec7;
+      text-shadow: 2px 2px #000;
+    }
+    button {
+      margin-top: 30px;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      font-weight: bold;
+      font-family: 'Shadows Into Light', cursive;
+      background: #ff6ec7;
+      border: none;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff6ec7;
+      transition: transform 0.2s ease-in-out;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .mensaje {
+      display: none;
+      margin-top: 40px;
+      padding: 25px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 15px;
+      max-width: 90%;
+      box-shadow: 0 0 20px #ff6ec7;
+      font-size: 1.2em;
+      color: #fff;
+      font-family: 'Shadows Into Light', cursive;
+    }
+    .mensaje p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .info {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      font-family: 'Pacifico', cursive;
+      color: #ffccff;
+      box-shadow: 0 0 15px #fff;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>💖 ¡Feliz Cumpleaños YuYi! 🎂</h1>
-    <p style="font-family: 'Great Vibes', cursive; font-size: 1.4em;">Una sorpresa especial para una persona especial ✨</p>
-    <button class="click-btn" onclick="mostrarMensaje()">✨ Haz clic aquí YuYi ✨</button><div class="mensaje" id="mensaje">
-  <p class="emoji">🎈🎉🥳🎁💐</p>
-  <p>Hola YuYi, naaaa 😜, nomás pasaba a saludarte y desearte un...</p>
-  <p><strong style="font-size: 1.5em; color: #ffd700; font-family: 'Great Vibes', cursive;">¡¡FELIZ CUMPLEAÑOS!! 🎊🎂</strong></p>
-  <p>Se que mañana es un día muy importante para ti 🗓️, el día en que naciste 🌟. Quiero que lo pases de la mejor manera y lo disfrutes muchísimo 💕. Si estuviera en Andahuaylas, créeme que te llegaría algo 🥺, pero ya sabes, ando de lado en lado 🚶‍♂️.</p>
-  <p>Eso no significa que no te considere, al contrario 💌. Sigue con fe ✝️, con fuerza 💪 y con ese espíritu de luchadora que tienes 💫. ¡A cumplir todos tus sueños y metas! 🌈</p>
-  <p>La vida es como una balanza ⚖️, a veces bien, a veces mal, pero tú siempre pa' delante 🚀. Eres una chica valiente y única 💖.</p>
-  <p>Espero que lo pases lindísimo con tu hermosa familia 👨‍👩‍👧‍👦 y tus miles de pretendientes ganados 🤭 jajaja.</p>
-  <p>Me atreví a escribirte esto hoy de noche 🌙 porque mañana estaré ocupado con el trabajo 👷‍♂️, y no quiero que pienses mal 🥲. Solo deseo que este mensaje te saque una sonrisa 😊.</p>
-  <p style="color: #ffefef; font-family: 'Indie Flower', cursive;">¡Te deseo un cumpleaños inolvidable YuYi! 🌸🎈🎁🎂💖</p>
+    <h1>🎂 ¡Feliz Cumpleaños Yuyi! 🎉</h1>
+    <button onclick="mostrarMensaje()">💌 Haz Click Aquí Yuyi 💖</button><div class="mensaje" id="mensaje">
+  <p>Hola Yuyi naaa 😝, nomás pasaba a saludarte y desearte un 💝<strong>FELIZ CUMPLEAÑOS 🎊🎂</strong>. Sé que mañana es un día muy importante para ti, ya que es el día en que naciste 👶✨.</p>
+  <p>Quiero que lo pases de la mejor manera 🥳, que lo disfrutes a mil 💃, y que te rodees de quienes te quieren ❤️. Si estuviera en Andahuaylas te llegaría algo bonito 🎁🎈... pero nel 😅 tú sabes que ando de lado en lado 🌍.</p>
+  <p>Eso no significa que no te considere, al contrario 🌟. Eres una chica fuerte, soñadora 🌈, con ganas de superarse 💪. Sigue con la fe 🙏 y cumple cada cosa que te propones ✨.</p>
+  <p>La vida es como una balanza ⚖️... a veces sube, a veces baja, pero tú nunca te rindas 💥. ¡Dale con todo Yuyi! 😘</p>
+  <p>Espero que mañana lo pases muy bonito al lado de tu familia 🏡, y de tus mil 's ganados jaja 🤭🤗.</p>
+  <p>Me atreví a escribirte esto ahora en la noche 🌙 porque mañana no voy a estar en línea 📵. No pienses que soy mal amigo 😓, es por el trabajo 🧠💼, espero lo entiendas.</p>
+  <p>Y otra vez 🎤... ¡<strong>FELIZ CUMPLEAÑOS YUYI 🎉🎂🎁</strong>! Que lo pases <span style="color: #ffcc00">SUUUUPEEER</span> 💞💫.</p>
 
   <div class="info">
-    <hr>
-    <p>📝 <strong>Mensaje creado por:</strong> Anth'Zz Berrocal a.k.a. <span style="color: #ffd700;">BerMatModZ</span></p>
-    <p>📍 Ubicación actual: Perú 🌎</p>
-    <p>💻 Proyectos: Bots, Webs, IA y más... 🤖💡</p>
-    <p>🌐 Contacto: <strong>937556459</strong></p>
-    <p style="font-family: 'Pacifico', cursive;">Con cariño, respeto y mucha buena vibra ✨</p>
-    <p class="emoji">💝🌈🔥👑🎨🌟</p>
+    🎯 <strong>Hecho por:</strong> Anth'Zz Berrocal / BerMatModZ 💻<br>
+    📱 <strong>Número:</strong> 937556459<br>
+    📍 <strong>Ubicación:</strong> Andahuaylas 🏔️<br>
+    🤖 <strong>Proyectos:</strong> Bots IA, Webs, Simulaciones Hacker y más...<br>
+    💬 <strong>Frase:</strong> “La vida es código y tú decides qué compilar.”
   </div>
 </div>
 
   </div>  <script>
     function mostrarMensaje() {
-      document.getElementById("mensaje").style.display = "block";
+      document.getElementById('mensaje').style.display = 'block';
     }
   </script></body>
 </html>
