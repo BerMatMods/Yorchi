@@ -88,7 +88,7 @@
     🎯 <strong>Hecho por:</strong> Anth'Zz Berrocal / BerMatModZ 💻<br>
     📱 <strong>Número:</strong> 937556459<br>
     📍 <strong>Ubicación:</strong> Andahuaylas 🏔️<br>
-    🤖 <strong>Proyectos:</strong> Bots IA, Webs, Simulaciones Hacker y más...<br>
+    🤖 <strong>Proyectos:</strong> Bots IA, Webs, hacking y más...<br>
     💬 <strong>Frase:</strong> “La vida es código y tú decides qué compilar.”
   </div>
 </div>
