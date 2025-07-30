@@ -3,141 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BerMatMods | Red Social</title>
+  <title>BerMatMods FacePro</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background-color: #e9ebee;
+      font-family: Helvetica, Arial, sans-serif;
     }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1877f2, #f0f2f5);
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #1c1e21;
-    }
-
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
+    .fb-header {
+      background-color: #3b5998;
+      color: white;
+      padding: 10px 0;
       text-align: center;
-      animation: fadeIn 1s ease;
-    }
-
-    .container h1 {
-      color: #1877f2;
-      margin-bottom: 20px;
-      font-size: 2.5em;
-    }
-
-    .input-field {
-      margin: 15px 0;
-      text-align: left;
-    }
-
-    .input-field label {
-      display: block;
+      font-size: 22px;
       font-weight: bold;
-      margin-bottom: 5px;
     }
-
-    .input-field input {
-      width: 100%;
-      padding: 12px;
+    .login-box {
+      background: white;
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
       border-radius: 8px;
-      border: 1px solid #ccc;
-      outline: none;
-      transition: all 0.3s;
+      text-align: center;
     }
-
-    .input-field input:focus {
-      border-color: #1877f2;
-      box-shadow: 0 0 8px rgba(24, 119, 242, 0.2);
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #3b5998;
     }
-
-    button {
-      width: 100%;
-      padding: 14px;
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .login-box button {
+      width: 95%;
+      padding: 10px;
       background-color: #1877f2;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      border-radius: 4px;
+      font-size: 16px;
     }
-
-    button:hover {
-      background-color: #155dc1;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #f0f0f0;
+    .info {
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 14px;
+      margin-top: 20px;
+      color: #333;
     }
-
-    .footer strong {
-      color: yellow;
+    .redes {
+      text-align: center;
+      margin-top: 30px;
     }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
+    .redes a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #3b5998;
     }
-
-    .banner {
-      position: absolute;
-      top: 15px;
-      background: #1c1e21;
-      color: #00ffea;
-      padding: 10px 25px;
-      border-radius: 0 0 12px 12px;
-      font-size: 1.2em;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    .mensaje {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 16px;
+      color: green;
+    }
+    .redes img {
+      width: 30px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
-
-  <div class="banner">
-    🔷 Proyecto Red BerMatMods 🔷
-  </div>
-
-  <div class="container">
-    <h1>Facebook</h1>
-    <div class="input-field">
-      <label for="email">Correo electrónico o número de teléfono</label>
-      <input type="text" id="email" placeholder="ejemplo@correo.com">
+  <div class="fb-header">BerMatMods FacePro</div>  <div class="login-box">
+    <h2>Iniciar sesión en tu cuenta</h2>
+    <input type="text" placeholder="Correo electrónico o número de teléfono">
+    <input type="password" placeholder="Contraseña">
+    <button disabled>Iniciar sesión</button>
+    <div class="info">
+      <p>Proyecto visual educativo - Inspirado en Facebook</p>
+      <p>Desarrollado por <strong>Anth'Zz Berrocal ⚡BerMatModZ🔥</strong></p>
+      <p>Ubicación: Andahuaylas, Perú</p>
     </div>
-    <div class="input-field">
-      <label for="password">Contraseña</label>
-      <input type="password" id="password" placeholder="**********">
+    <div class="mensaje">
+      ¡Buen trabajo AnthZz Berrocal! Está genial, esperamos una próxima actualización.
     </div>
-    <button onclick="iniciarSesion()">Iniciar sesión</button>
+  </div>  <div class="redes">
+    <a href="https://github.com/BerMatMods" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> GitHub</a>
+    <a href="https://www.instagram.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"> Instagram</a>
+    <a href="https://www.tiktok.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"> TikTok</a>
   </div>
-
-  <div class="footer">
-    ⚡ Proyecto visual educativo colaborativo con <strong>BerMatMods</strong> <br>
-    © 2025 AnthzZ Berrocal | Inspirado en el diseño de Meta™
-  </div>
-
-  <script>
-    function iniciarSesion() {
-      alert("🚀 Esto es un proyecto visual. No se recopila información.");
-    }
-  </script>
-
 </body>
 </html>
