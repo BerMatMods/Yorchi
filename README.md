@@ -79,18 +79,15 @@
   </style>
 </head>
 <body>
-  <div class="fb-header">BerMatMods FacePro</div>  <div class="login-box">
+  <div class="fb-header">FACEBOOK FacePro</div>  <div class="login-box">
     <h2>Iniciar sesión en tu cuenta</h2>
     <input type="text" placeholder="Correo electrónico o número de teléfono">
     <input type="password" placeholder="Contraseña">
     <button disabled>Iniciar sesión</button>
     <div class="info">
-      <p>Proyecto visual educativo - Inspirado en Facebook</p>
-      <p>Desarrollado por <strong>Anth'Zz Berrocal ⚡BerMatModZ🔥</strong></p>
-      <p>Ubicación: Andahuaylas, Perú</p>
+      <p>Proyecto FacePro</p>
+      <p>Desarrollado por <strong>Anth'Zz Berrocal </strong></p>
     </div>
-    <div class="mensaje">
-      ¡Buen trabajo AnthZz Berrocal! Está genial, esperamos una próxima actualización.
     </div>
   </div>  <div class="redes">
     <a href="https://github.com/BerMatMods" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> GitHub</a>
