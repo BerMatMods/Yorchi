@@ -1,161 +1,143 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BerMatMods FacePro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BerMatMods | Red Social</title>
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #e7ebf0, #cfd8e4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1877f2, #f0f2f5);
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      flex-direction: column;
+      color: #1c1e21;
     }
 
-    .banner {
-      background-color: #1877f2;
-      color: white;
-      width: 100%;
-      padding: 10px 0;
-      text-align: center;
-      font-size: 1.4em;
-      font-weight: bold;
-      animation: slideTop 1s ease-out;
-    }
-
-    @keyframes slideTop {
-      from { transform: translateY(-100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .login-box {
+    .container {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      padding: 25px;
-      width: 90%;
-      max-width: 360px;
-      text-align: center;
-      animation: fadeIn 1.2s ease-in-out;
-      margin-top: 20px;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .login-box h2 {
-      color: #1877f2;
-      font-size: 1.3em;
-      margin-bottom: 20px;
-    }
-
-    input[type="text"], input[type="password"] {
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .container h1 {
+      color: #1877f2;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+    }
+
+    .input-field {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .input-field label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .input-field input:focus {
+      border-color: #1877f2;
+      box-shadow: 0 0 8px rgba(24, 119, 242, 0.2);
     }
 
     button {
       width: 100%;
+      padding: 14px;
       background-color: #1877f2;
       color: white;
-      padding: 10px;
-      font-size: 1em;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-size: 1em;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s;
     }
 
     button:hover {
-      background-color: #155db2;
+      background-color: #155dc1;
     }
 
     .footer {
-      margin-top: 12px;
-      font-size: 0.85em;
-      color: #555;
-    }
-
-    .developer-box {
       margin-top: 30px;
+      font-size: 0.9em;
+      color: #f0f0f0;
       text-align: center;
-      padding: 10px;
-      border: 1.5px dashed #1877f2;
-      border-radius: 10px;
-      background: #f3f9ff;
-      font-size: 0.75em;
-      animation: glow 2s infinite;
-      width: 90%;
-      max-width: 500px;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 5px #1877f2; }
-      50% { box-shadow: 0 0 15px #1877f2; }
+    .footer strong {
+      color: yellow;
     }
 
-    .developer-box h3 {
-      font-size: 1em;
-      margin-bottom: 5px;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
     }
 
-    .developer-box p {
-      margin: 3px 0;
-    }
-
-    .important-note {
-      font-size: 0.7em;
-      margin-top: 15px;
-      color: #888;
-      text-align: center;
-      max-width: 600px;
-      padding: 0 10px;
+    .banner {
+      position: absolute;
+      top: 15px;
+      background: #1c1e21;
+      color: #00ffea;
+      padding: 10px 25px;
+      border-radius: 0 0 12px 12px;
+      font-size: 1.2em;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
 <body>
 
-  <div class="banner">⚡ BerMatMods FacePro 🔥</div>
+  <div class="banner">
+    🔷 Proyecto Red BerMatMods 🔷
+  </div>
 
-  <div class="login-box">
-    <h2>Iniciar sesión en tu cuenta</h2>
-    <form>
-      <input type="text" placeholder="Correo electrónico o número de teléfono" required>
-      <input type="password" placeholder="Contraseña" required>
-      <button type="submit">Entrar</button>
-    </form>
-    <div class="footer">
-      ¿Olvidaste tu contraseña? • Crear nueva cuenta
+  <div class="container">
+    <h1>Facebook</h1>
+    <div class="input-field">
+      <label for="email">Correo electrónico o número de teléfono</label>
+      <input type="text" id="email" placeholder="ejemplo@correo.com">
     </div>
+    <div class="input-field">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="**********">
+    </div>
+    <button onclick="iniciarSesion()">Iniciar sesión</button>
   </div>
 
-  <div class="developer-box">
-    <h3>👾 Proyecto desarrollado por ⚡BerMatMods🔥</h3>
-    <p><strong>Autor:</strong> Anth'Zz Berrocal</p>
-    <p><strong>Ubicación:</strong> Andahuaylas, Perú 🇵🇪</p>
-    <p><strong>Especialidad:</strong> Ciberseguridad, bots, apps IA, animaciones JS</p>
-    <p><strong>Contacto:</strong> github.com/BerMatMods</p>
+  <div class="footer">
+    ⚡ Proyecto visual educativo colaborativo con <strong>BerMatMods</strong> <br>
+    © 2025 AnthzZ Berrocal | Inspirado en el diseño de Meta™
   </div>
 
-  <div class="important-note">
-    Este es un clon de Facebook para mostrar diseño y estructura. Proyecto Premium, sin conexión real a servidores por ahora en próximas semanas sacaremos la actualización 100% funcional..
-  </div>
+  <script>
+    function iniciarSesion() {
+      alert("🚀 Esto es un proyecto visual. No se recopila información.");
+    }
+  </script>
 
 </body>
 </html>
