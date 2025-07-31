@@ -1,98 +1,131 @@
-
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BerMatMods FacePro</title>
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚡BerMatVPN Premium🌐</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #e9ebee;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d0d0d;
+      color: #00ffcc;
+      overflow-x: hidden;
     }
-    .fb-header {
-      background-color: #3b5998;
-      color: white;
-      padding: 10px 0;
+    header {
+      background: #111;
+      padding: 1rem;
       text-align: center;
-      font-size: 22px;
-      font-weight: bold;
+      border-bottom: 3px solid #00ffcc;
     }
-    .login-box {
-      background: white;
-      max-width: 400px;
-      margin: 80px auto;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      border-radius: 8px;
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      text-shadow: 0 0 10px #00ffcc;
     }
-    .login-box h2 {
-      margin-bottom: 20px;
-      font-size: 22px;
-      color: #3b5998;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #121212;
+      padding: 1rem 0;
+      border-bottom: 2px solid #00ffcc;
     }
-    .login-box input[type="text"],
-    .login-box input[type="password"] {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-    .login-box button {
-      width: 95%;
-      padding: 10px;
-      background-color: #1877f2;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-    .info {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 20px;
-      color: #333;
-    }
-    .redes {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .redes a {
-      margin: 0 10px;
+    nav a {
+      color: #00ffcc;
       text-decoration: none;
-      font-size: 20px;
-      color: #3b5998;
-    }
-    .mensaje {
-      margin-top: 15px;
       font-weight: bold;
-      font-size: 16px;
-      color: green;
+      transition: 0.3s;
     }
-    .redes img {
-      width: 30px;
-      vertical-align: middle;
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      padding: 2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      border-left: 4px solid #00ffcc;
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 1rem;
+      border: 1px solid #00ffcc44;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #00ffcc33;
+    }
+    footer {
+      background: #111;
+      padding: 2rem;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    .vip-section {
+      background: linear-gradient(145deg, #00ffcc44, #003333aa);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffcc66;
+      margin-top: 3rem;
+    }
+    .animated-title {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+      }
     }
   </style>
-</head>
-<body>
-  <div class="fb-header">FACEBOOK FacePro</div>  <div class="login-box">
-    <h2>Iniciar sesión en tu cuenta</h2>
-    <input type="text" placeholder="Correo electrónico o número de teléfono">
-    <input type="password" placeholder="Contraseña">
-    <button disabled>Iniciar sesión</button>
-    <div class="info">
-      <p>Proyecto FacePro</p>
-      <p>Desarrollado por <strong>Anth'Zz Berrocal </strong></p>
+</head><body>
+  <header>
+    <h1 class="animated-title">⚡Bienvenido a BerMatVPN - Servidores Premium 2025🔥</h1>
+    <p>By Anth'Zz Berrocal alias <strong>BerMatModZ</strong> 👾</p>
+  </header>  <nav>
+    <a href="#entel">Entel</a>
+    <a href="#movistar">Movistar</a>
+    <a href="#claro">Claro</a>
+    <a href="#bitel">Bitel</a>
+    <a href="#vip">Zona VIP</a>
+  </nav>  <section id="entel">
+    <h2 class="section-title">🌐 Servidores ENTEL</h2>
+    <div class="card">
+      <p><strong>HTTP Injector:</strong> Servidor WS con payload m.facebook.com<br><strong>Paquete:</strong> Sin redes 5GB – Gratis</p>
     </div>
+    <div class="card">
+      <p><strong>NapsternetV:</strong> Configuración premium UDP personalizado<br><strong>Región:</strong> Perú 🇵🇪</p>
     </div>
-  </div>  <div class="redes">
-    <a href="https://github.com/BerMatMods" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> GitHub</a>
-    <a href="https://www.instagram.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"> Instagram</a>
-    <a href="https://www.tiktok.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"> TikTok</a>
-  </div>
-</body>
-</html>
+  </section>  <section id="movistar">
+    <h2 class="section-title">📱 Servidores MOVISTAR</h2>
+    <div class="card">
+      <p><strong>HTTP Custom:</strong> Puerto 443 + bug oculto<br><strong>Paquete:</strong> Sin saldo – Datos Ilimitados</p>
+    </div>
+  </section>  <section id="claro">
+    <h2 class="section-title">📡 Servidores CLARO</h2>
+    <div class="card">
+      <p><strong>Injector Pro:</strong> SSH auto-renovable<br><strong>Duración:</strong> 7 días Premium</p>
+    </div>
+  </section>  <section id="bitel">
+    <h2 class="section-title">📲 Servidores BITEL</h2>
+    <div class="card">
+      <p><strong>SlowDNS:</strong> Dominio TTL + Respaldo gratuito<br><strong>Conectividad:</strong> Limitada pero estable</p>
+    </div>
+  </section>  <section id="vip" class="vip-section">
+    <h2 class="section-title">🔐 Acceso VIP - Zona Premium</h2>
+    <p>Accede a servidores privados con alta velocidad, sin límites y con soporte técnico personalizado. 🌍🌐</p>
+    <ul>
+      <li>Acceso a `.ehi`, `.npv`, `.hc` exclusivos</li>
+      <li>Actualizaciones diarias</li>
+      <li>Soporte vía WhatsApp</li>
+      <li>Configuraciones para cada país</li>
+    </ul>
+    <p><strong>Solicita tu acceso a:</strong> <code>BerMatMods@vpnmail.com</code></p>
+  </section>  <footer>
+    <p>🔥 Web desarrollada por Anth'Zz Berrocal alias ⚡BerMatModZ🔥<br>
+    © 2025 - Todos los derechos reservados.</p>
+  </footer>
+</body></html>
