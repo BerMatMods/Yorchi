@@ -350,8 +350,8 @@
       <span class="cursor" id="cursor"></span>
 
       <div class="imagen-extra" id="imagenExtra">
-        <img src="https://i.postimg.cc/pXWvCFsC/IMG-20240924-WA0182.jpg" alt="Foto de nosotros" />
-      </div>
+        <img src="https://i.postimg.cc/j5HdGJKJ/Screenshot-20250810-134752.jpg" alt="Foto de nosotros" />
+      </div> 
 
       <button id="btnGaleria">Ver nuestra galería 📸</button>
 
