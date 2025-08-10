@@ -315,7 +315,7 @@
     </div>
 
     <div id="infoSeguridad">
-      By: <b>Anth'Zz Berrocal</b><br>👽  <strong>𝑩𝒆𝒓𝑴𝒂𝒕-𝑴𝒐𝒅𝒔</strong> 👽
+      By: <b>Anth'Zz Berrocal</b><br>👽  <strong>𝑩𝒆𝒓𝑴𝒂𝒕 𝑴𝒐𝒅𝒔</strong> 👽
     </div>
   </div>
 
