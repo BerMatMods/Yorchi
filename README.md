@@ -315,18 +315,18 @@
     </div>
 
     <div id="infoSeguridad">
-      By: <b>Anth'Zz Berrocal</b><br>👽 Líder de <strong>BERMATMODS</strong> 👽
+      By: <b>Anth'Zz Berrocal</b><br>👽  <strong>𝑩𝒆𝒓𝑴𝒂𝒕-𝑴𝒐𝒅𝒔</strong> 👽
     </div>
   </div>
 
-  <!-- PANTALLA 2: pregunta "¿Qué tan golosa es...?" -->
+  <!-- PANTALLA 2: pregunta "¿Qué tan golosa eres...?" -->
   <div id="pantallaPregunta" class="pantalla hidden">
     <div class="pregunta-contenedor">
-      <h2>❓ ¿Qué tan golosa es…?</h2>
+      <h2>❓ ¿Qué tan golosa eres…?</h2>
       <div class="opciones">
         <button data-resp="1">No soy Goloza</button>
         <button data-resp="2">Soy poco Goloza</button>
-        <button data-resp="3" class="correct">Soy muy Goloza 😏</button>
+        <button data-resp="3" class="correct">Soy muy Goloza 🔥</button>
       </div>
     </div>
   </div>
@@ -334,14 +334,14 @@
   <!-- MODAL PEQUEÑO DE ERROR (para opción 1 y 2) -->
   <div id="modalError" role="alert" aria-hidden="true">
     <h3>❌ Respuesta incorrecta</h3>
-    <p>Estás mintiendo... 😢💕</p>
+    <p>Estás mintiendo Mamaguevo... 😢💕</p>
     <button id="cerrarModal">Volver a intentar</button>
   </div>
 
   <!-- CONTENIDO PRINCIPAL (todo tu contenido romántico original) -->
   <div id="contenidoPrincipal">
     <div class="container">
-      <div class="titulo">💖 Feliz Aniversario Mi Amor 💖</div>
+      <div class="titulo">💖 Feliz Aniversario Mi Amorcita hermosa 💖</div>
       <div class="contador" id="contador">Calculando el tiempo... ⏳</div>
 
       <button class="btn" id="btnSorpresa">TOCA AQUÍ MI REINA</button>
