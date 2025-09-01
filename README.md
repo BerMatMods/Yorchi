@@ -11,23 +11,37 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      background: linear-gradient(135deg, #fdf2f8, #f8e8fb, #f3d9f7);
       font-family: 'Raleway', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
       min-height: 100vh;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    /* Pantallas de acceso (overlay) */
+    /* Brillos decorativos (destellos animados) */
+    .brillo {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Pantallas de acceso (overlay con brillo) */
     .pantalla {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(252,228,236,0.98), rgba(248,187,208,0.98));
+      background: linear-gradient(135deg, rgba(253,242,248,0.95), rgba(243,217,247,0.95));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,229 +49,333 @@
       z-index: 9999;
       padding: 20px;
       text-align: center;
-      transition: opacity 0.25s ease;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(219, 112, 147, 0.2);
     }
 
-    .pantalla.hidden { display: none; }
+    .pantalla.hidden {
+      display: none;
+    }
 
     .pantalla h2 {
-      font-size: 30px;
-      color: #ad1457;
+      font-size: 32px;
+      color: #9c27b0;
       font-family: 'Pacifico', cursive;
-      margin-bottom: 12px;
-      text-shadow: 0 0 5px #ec407a;
+      margin-bottom: 16px;
+      text-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
+      position: relative;
+      display: inline-block;
     }
 
-    /* Teclado y entrada */
+    .pantalla h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #e91e63, transparent);
+      box-shadow: 0 0 8px #e91e63;
+    }
+
+    /* Teclado y entrada con brillo */
     #claveInput {
       font-size: 24px;
-      padding: 12px 18px;
-      border: 3px solid #ec407a;
-      border-radius: 15px;
+      padding: 14px 18px;
+      border: 3px solid #d19ad6;
+      border-radius: 18px;
       text-align: center;
-      width: 220px;
-      margin-bottom: 12px;
+      width: 240px;
+      margin-bottom: 16px;
       letter-spacing: 4px;
-      color: #880e4f;
-      background: #fff7fb;
+      color: #7b1fa2;
+      background: rgba(255, 250, 255, 0.8);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 15px rgba(213, 105, 186, 0.3);
+      font-weight: 500;
+    }
+
+    #claveInput:focus {
+      outline: none;
+      box-shadow: 0 0 20px rgba(213, 105, 186, 0.6), 0 0 30px rgba(233, 30, 99, 0.3);
     }
 
     #teclado {
       display: grid;
-      grid-template-columns: repeat(3, 70px);
-      gap: 12px;
-      margin-bottom: 14px;
+      grid-template-columns: repeat(3, 75px);
+      gap: 14px;
+      margin-bottom: 16px;
     }
 
     .tecla {
       font-size: 22px;
-      padding: 12px;
-      background: linear-gradient(180deg,#f8bbd0,#f48fb1);
-      border: 2px solid #ec407a;
-      border-radius: 12px;
-      color: #880e4f;
+      font-weight: bold;
+      padding: 14px;
+      background: linear-gradient(180deg, #f8e8fb, #eadcf8);
+      border: 2px solid #d19ad6;
+      border-radius: 16px;
+      color: #7b1fa2;
       cursor: pointer;
-      box-shadow: 0 6px 14px rgba(244,143,177,0.25);
+      box-shadow: 0 6px 16px rgba(142, 36, 170, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
       user-select: none;
-      text-align:center;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .tecla:active { transform: translateY(2px); }
+    .tecla::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tecla:hover::before {
+      opacity: 1;
+    }
+
+    .tecla:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 8px rgba(142, 36, 170, 0.2);
+    }
 
     #accederBtn {
-      padding: 10px 26px;
+      padding: 12px 30px;
       font-size: 20px;
-      background: linear-gradient(45deg, #f06292, #ec407a);
+      background: linear-gradient(45deg, #e91e63, #9c27b0);
       color: white;
       border: none;
       border-radius: 30px;
       font-family: 'Pacifico', cursive;
-      box-shadow: 0 8px 30px rgba(236,64,122,0.25);
+      box-shadow: 0 8px 30px rgba(233, 30, 99, 0.3),
+                  0 0 20px rgba(233, 30, 99, 0.2) inset;
       cursor: pointer;
-      margin-top: 6px;
+      margin-top: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Stitch & credit */
-    #stitch {
-      border: 5px dashed #f06292;
-      border-radius: 18px;
-      padding: 12px;
-      background: #fff0f6;
-      box-shadow: 0 0 20px #f8bbd0;
-      margin-top: 18px;
-      display: inline-block;
+    #accederBtn::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.5s;
     }
-    #stitch img { width: 180px; border-radius: 14px; }
+
+    #accederBtn:hover::after {
+      opacity: 1;
+      animation: sparkle 0.8s ease forwards;
+    }
+
+    @keyframes sparkle {
+      0% { transform: scale(0); opacity: 0.7; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    #accederBtn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 40px rgba(233, 30, 99, 0.4),
+                  0 0 30px rgba(233, 30, 99, 0.25);
+    }
+
+    /* Stitch & credit con marco brillante */
+    #stitch {
+      border: 3px solid #d19ad6;
+      border-radius: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 25px rgba(213, 105, 186, 0.4);
+      margin-top: 20px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #stitch::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      pointer-events: none;
+      animation: slideShine 4s infinite;
+    }
+
+    @keyframes slideShine {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 0.6; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    #stitch img {
+      width: 180px;
+      border-radius: 16px;
+      border: 3px solid #e91e63;
+      box-shadow: 0 0 20px rgba(233, 30, 99, 0.4);
+    }
 
     #infoSeguridad {
-      margin-top: 14px;
-      color: #ad1457;
+      margin-top: 16px;
+      color: #9c27b0;
       font-family: 'Pacifico', cursive;
       font-size: 16px;
-      text-shadow: 0 0 5px #ec407a;
+      text-shadow: 0 0 8px rgba(233, 30, 99, 0.2);
     }
 
-    /* Pregunta (segunda pantalla) */
-    .pregunta-contenedor {
-      text-align: center;
-    }
-    .opciones {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 10px;
-    }
-    .opciones button {
-      padding: 12px 18px;
-      font-size: 18px;
-      border-radius: 14px;
-      background: linear-gradient(180deg,#fff1f6,#f8bbd0);
-      border: 2px solid #ec407a;
-      color: #880e4f;
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease;
-      font-weight: 700;
-      max-width: 320px;
-      margin: 0 auto;
-    }
-    .opciones button:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(244,143,177,0.18); }
-    .opciones button.correct { background: linear-gradient(45deg,#ffd54f,#ffb300); color:#5d3400; border-color:#ffb300; }
-
-    /* Modal pequeño de error decorado */
-    #modalError {
-      position: fixed;
-      left: 50%;
-      top: 18%;
-      transform: translateX(-50%);
-      min-width: 260px;
-      max-width: 90%;
-      background: linear-gradient(180deg,#fff0f6,#ffd9e8);
-      border: 3px solid #ff80ab;
-      border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 8px 40px rgba(240,128,171,0.25);
-      z-index: 10050;
-      display: none;
-      text-align: center;
-      animation: popup 0.28s ease;
-    }
-    #modalError h3 {
-      margin: 6px 0 8px;
-      color: #c2185b;
-      font-family: 'Pacifico', cursive;
-      font-size: 20px;
-      text-shadow: 0 0 6px rgba(236,64,122,0.3);
-    }
-    #modalError p {
-      margin: 0 0 10px;
-      color: #880e4f;
-      font-weight: 700;
-    }
-    #modalError button {
-      padding: 8px 18px;
-      border-radius: 12px;
-      background: linear-gradient(45deg,#f06292,#ec407a);
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-    }
-    @keyframes popup {
-      from { transform: translate(-50%, -8px) scale(0.96); opacity: 0; }
-      to { transform: translate(-50%, 0) scale(1); opacity: 1; }
-    }
-
-    /* Contenido principal (se mantiene tal como en el original) */
+    /* Contenido principal con efectos brillantes */
     #contenidoPrincipal {
       display: none;
       width: 100%;
       padding: 40px 12px 80px;
-      display: flex;
       justify-content: center;
     }
 
     .container {
       text-align: center;
       margin-top: 60px;
-      padding: 30px;
-      border-radius: 25px;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 0 40px rgba(219, 112, 147, 0.7);
+      padding: 35px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 
+        0 0 30px rgba(219, 112, 147, 0.4),
+        0 0 50px rgba(233, 30, 99, 0.2) inset;
       width: 90%;
       max-width: 700px;
       z-index: 2;
+      border: 2px solid rgba(213, 105, 186, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+      pointer-events: none;
+      animation: slideShine 6s infinite;
+      z-index: -1;
     }
 
     .titulo {
       font-family: 'Dancing Script', cursive;
-      font-size: 50px;
-      color: #ad1457;
-      text-shadow: 0 0 15px #f48fb1, 0 0 10px #ec407a;
-      animation: parpadeo 2s infinite;
+      font-size: 54px;
+      color: #9c27b0;
+      text-shadow: 
+        0 0 15px rgba(233, 30, 99, 0.4),
+        0 0 25px rgba(213, 105, 186, 0.5);
+      animation: parpadeo 2s infinite, glow 2.5s ease-in-out infinite alternate;
+      position: relative;
+      display: inline-block;
     }
-    @keyframes parpadeo { 0%,100%{opacity:1} 50%{opacity:0.6} }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #e91e63; }
+      100% { text-shadow: 0 0 25px #9c27b0, 0 0 35px #e91e63; }
+    }
 
     .contador {
       font-size: 20px;
-      color: #880e4f;
+      color: #7b1fa2;
       font-weight: 700;
       margin-top: 20px;
+      text-shadow: 0 0 5px rgba(213, 105, 186, 0.3);
     }
 
     .btn {
       margin: 30px auto 0;
       padding: 20px 40px;
       font-size: 24px;
-      background: linear-gradient(45deg, #f06292, #ec407a);
-      border: 3px solid #ad1457;
+      background: linear-gradient(45deg, #e91e63, #9c27b0);
+      border: 3px solid #9c27b0;
       color: white;
       border-radius: 35px;
       cursor: pointer;
-      box-shadow: 0 0 25px #f48fb1;
+      box-shadow: 
+        0 0 25px rgba(233, 30, 99, 0.3),
+        0 0 15px rgba(213, 105, 186, 0.4) inset;
       font-family: 'Pacifico', cursive;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
       user-select: none;
       display: inline-block;
+      position: relative;
+      overflow: hidden;
     }
-    .btn:hover { transform: scale(1.03); }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -20px;
+      width: 30px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+      animation: sparkle 1s ease forwards;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 
+        0 0 35px rgba(233, 30, 99, 0.5),
+        0 0 20px rgba(213, 105, 186, 0.6) inset;
+    }
 
     .mensaje {
       margin-top: 30px;
       padding: 30px 25px;
-      background-color: #fce4ec;
+      background: linear-gradient(to bottom, #fdf2f8, #f8e8fb);
       border-radius: 20px;
       font-size: 24px;
-      color: #ad1457;
-      box-shadow: 0 0 30px #f48fb1;
+      color: #9c27b0;
+      box-shadow: 0 0 30px rgba(219, 112, 147, 0.4);
       font-family: 'Great Vibes', cursive;
-      text-shadow: 0 0 5px #ec407a;
+      text-shadow: 0 0 5px rgba(233, 30, 99, 0.2);
+      display: none;
+      animation: aparecer 1.8s ease-out forwards;
+      border: 1px solid rgba(213, 105, 186, 0.3);
+    }
+
+    .imagen-extra {
+      margin-top: 25px;
       display: none;
       animation: aparecer 1.8s ease-out forwards;
     }
-    .imagen-extra { margin-top: 25px; display: none; animation: aparecer 1.8s ease-out forwards; }
-    .imagen-extra img { max-width: 90%; border-radius: 25px; box-shadow: 0 0 35px #f48fb1; border: 5px solid #ec407a; user-select:none; }
 
-    @keyframes aparecer { 0%{opacity:0;transform:translateY(25px)}100%{opacity:1;transform:translateY(0)} }
+    .imagen-extra img {
+      max-width: 90%;
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(233, 30, 99, 0.4);
+      border: 5px solid #e91e63;
+      user-select: none;
+      animation: brilloBorde 3s infinite alternate;
+    }
+
+    @keyframes brilloBorde {
+      0% { border-color: #e91e63; box-shadow: 0 0 30px rgba(233, 30, 99, 0.3); }
+      100% { border-color: #9c27b0; box-shadow: 0 0 40px rgba(142, 36, 170, 0.5); }
+    }
 
     .muñequitos {
       position: fixed;
@@ -266,52 +384,173 @@
       width: 100%;
       text-align: center;
       padding: 15px 0;
-      background: rgba(255, 228, 241, 0.7);
+      background: rgba(255, 242, 248, 0.8);
+      backdrop-filter: blur(8px);
       font-size: 40px;
-      animation: rebote 2.5s infinite ease-in-out;
       z-index: 1;
+      border-top: 2px solid rgba(213, 105, 186, 0.3);
     }
+
     .muñequitos .cuadro {
       display: inline-block;
-      background: #fff0f6;
-      border: 3px solid #f48fb1;
+      background: rgba(255, 255, 255, 0.7);
+      border: 3px solid #d19ad6;
       border-radius: 20px;
       padding: 15px;
       margin: 0 15px;
-      box-shadow: 0 0 15px #f8bbd0;
+      box-shadow: 0 0 20px rgba(213, 105, 186, 0.4);
+      position: relative;
+      overflow: hidden;
     }
-    .muñequitos img { width: 85px; height: 85px; animation: muñequito-bailando 2.5s infinite; user-select:none; }
+
+    .muñequitos .cuadro::before {
+      content: '';
+      position: absolute;
+      top: -5px; left: -5px;
+      width: 20px; height: 20px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: chispazo 2s infinite;
+    }
+
+    @keyframes chispazo {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    .muñequitos img {
+      width: 85px;
+      height: 85px;
+      animation: muñequito-bailando 2.5s infinite;
+      user-select: none;
+      border-radius: 12px;
+    }
+
     @keyframes rebote { 0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)} }
     @keyframes muñequito-bailando { 0%{transform:translateY(0)}50%{transform:translateY(-15px)}100%{transform:translateY(0)} }
 
-    #btnGaleria { margin-top: 20px; background: linear-gradient(45deg, #ba68c8, #ab47bc); border: 3px solid #8e24aa; color: white; border-radius: 30px; padding: 15px 30px; font-size: 20px; font-family: 'Pacifico', cursive; cursor: pointer; box-shadow: 0 0 20px #ce93d8; transition: transform 0.3s ease; }
-    #btnGaleria:hover { transform: scale(1.05); box-shadow: 0 0 30px #9c27b0; }
+    #btnGaleria {
+      margin-top: 20px;
+      background: linear-gradient(45deg, #ba68c8, #9c27b0);
+      border: 3px solid #8e24aa;
+      color: white;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-family: 'Pacifico', cursive;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(186, 104, 200, 0.4);
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-    #galeria { display: none; margin-top: 25px; max-width: 700px; text-align: center; }
-    #galeria .cuadro-foto { display: inline-block; margin: 10px; border: 3px solid #ce93d8; border-radius: 15px; overflow: hidden; box-shadow: 0 0 15px #ba68c8; background: white; transition: transform 0.3s ease; cursor: pointer; width: 150px; height: 150px; }
-    #galeria img { width: 100%; height: 100%; object-fit: cover; }
+    #btnGaleria::after {
+      content: '✨';
+      position: absolute;
+      top: 5px; right: 10px;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
 
-    /* mensaje tip cursor estilo */
+    #btnGaleria:hover::after {
+      opacity: 1;
+    }
+
+    #btnGaleria:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(142, 36, 170, 0.6);
+    }
+
+    #galeria {
+      display: none;
+      margin-top: 25px;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    #galeria .cuadro-foto {
+      display: inline-block;
+      margin: 12px;
+      border: 3px solid #d19ad6;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(213, 105, 186, 0.4);
+      background: white;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      width: 150px;
+      height: 150px;
+      position: relative;
+    }
+
+    #galeria .cuadro-foto::before {
+      content: '💖';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      font-size: 30px;
+      transition: all 0.4s ease;
+      pointer-events: none;
+    }
+
+    #galeria .cuadro-foto:hover::before {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.8;
+    }
+
+    #galeria .cuadro-foto:hover {
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+    }
+
+    #galeria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
     .cursor {
       display: inline-block;
       width: 8px;
-      background-color: #ff69b4;
+      background-color: #e91e63;
       margin-left: 3px;
       animation: blink 0.8s infinite;
+      border-radius: 4px;
     }
-    @keyframes blink { 0%,50%{opacity:1}51%,100%{opacity:0} }
+
+    @keyframes blink {
+      0%,50%{opacity:1}
+      51%,100%{opacity:0}
+    }
+
+    @keyframes aparecer {
+      0%{opacity:0;transform:translateY(25px)}
+      100%{opacity:1;transform:translateY(0)}
+    }
   </style>
 </head>
 <body>
-  <!-- PANTALLA 1: ingreso de clave -->
+
+  <!-- === AUDIO DE FONDO (música desde Google Drive) === -->
+  <audio id="audioFondo" loop>
+    <source src="https://drive.google.com/uc?export=download&id=1090PcBCJcNHMnH3jfP48IulVZk3KHG87" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- PANTALLA DE CLAVE -->
   <div id="pantallaClave" class="pantalla">
     <h2>🔒 Código para acceder</h2>
-    <input type="text" id="claveInput" placeholder="10/11/23" maxlength="8" readonly>
+    <input type="text" id="claveInput" placeholder="10/11/23" maxlength="8">
     <div id="teclado"></div>
     <button id="accederBtn">Acceder</button>
 
     <div id="stitch">
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUydXRucTZibGt3cDRhdTA1NXQzOG04ejZ6NGVtbXNzMjAxemp3ZnZjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/huXuyCODzzCQLy3T05/giphy.gif" alt="Stitch Amoroso">
+      <img src=" https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyaHpuZHJjNzNiaGVmdGptNDdmcWc4OTBybzdpNXQ2NWZhbnkxYmZ2biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11TyfGbDbBv4be/giphy.gif" alt="Stitch Amoroso">
     </div>
 
     <div id="infoSeguridad">
@@ -319,26 +558,7 @@
     </div>
   </div>
 
-  <!-- PANTALLA 2: pregunta "¿Qué tan golosa eres...?" -->
-  <div id="pantallaPregunta" class="pantalla hidden">
-    <div class="pregunta-contenedor">
-      <h2>❓ ¿Qué tan golosa eres…?</h2>
-      <div class="opciones">
-        <button data-resp="1">No soy Goloza</button>
-        <button data-resp="2">Soy poco Goloza</button>
-        <button data-resp="3" class="correct">Soy muy Goloza 🔥</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL PEQUEÑO DE ERROR (para opción 1 y 2) -->
-  <div id="modalError" role="alert" aria-hidden="true">
-    <h3>❌ Respuesta incorrecta</h3>
-    <p>Estás mintiendo Mamaguevo... 😢💕</p>
-    <button id="cerrarModal">Volver a intentar</button>
-  </div>
-
-  <!-- CONTENIDO PRINCIPAL (todo tu contenido romántico original) -->
+  <!-- CONTENIDO PRINCIPAL -->
   <div id="contenidoPrincipal">
     <div class="container">
       <div class="titulo">💖 Feliz Aniversario Mi Amorcita hermosa 💖</div>
@@ -350,29 +570,60 @@
       <span class="cursor" id="cursor"></span>
 
       <div class="imagen-extra" id="imagenExtra">
-        <img src="https://i.postimg.cc/j5HdGJKJ/Screenshot-20250810-134752.jpg" alt="Foto de nosotros" />
+        <img src="https://i.postimg.cc/j5HdGJKJ/Screenshot-20250810-134752.jpg " alt="Foto de nosotros" />
       </div> 
 
       <button id="btnGaleria">Ver nuestra galería 📸</button>
 
       <div id="galeria">
-        <div class="cuadro-foto"><img src="https://i.postimg.cc/HkxS5Yjs/1742316301125-2.jpg" alt=""></div>
-        <div class="cuadro-foto"><img src="https://i.postimg.cc/8PkwQpRB/Screenshot-20250427-213138.jpg" alt=""></div>
-        <div class="cuadro-foto"><img src="https://i.postimg.cc/VNsb5vND/received-1162848851410899.jpg" alt=""></div>
-        <div class="cuadro-foto"><img src="https://i.postimg.cc/RVRShRnx/PSX-20250530-060357.jpg" alt=""></div>
-        <div class="cuadro-foto"><img src="https://i.postimg.cc/59KpJcnh/IMG-20241228-231305-817-3.jpg" alt=""></div>
+        <div class="cuadro-foto"><img src="https://i.postimg.cc/HkxS5Yjs/1742316301125-2.jpg " alt=""></div>
+        <div class="cuadro-foto"><img src="https://i.postimg.cc/8PkwQpRB/Screenshot-20250427-213138.jpg " alt=""></div>
+        <div class="cuadro-foto"><img src="https://i.postimg.cc/VNsb5vND/received-1162848851410899.jpg " alt=""></div>
+        <div class="cuadro-foto"><img src="https://i.postimg.cc/RVRShRnx/PSX-20250530-060357.jpg " alt=""></div>
+        <div class="cuadro-foto"><img src="https://i.postimg.cc/59KpJcnh/IMG-20241228-231305-817-3.jpg " alt=""></div>
       </div>
     </div>
 
     <div class="muñequitos" aria-hidden="true">
-      <div class="cuadro"><img src="https://media0.giphy.com/media/yN5xPFm8klwMddZVKi/giphy.gif" alt=""></div>
-      <div class="cuadro"><img src="https://media2.giphy.com/media/5dkb3UXNiRU5qwNrzL/giphy.gif" alt=""></div>
-      <div class="cuadro"><img src="https://media0.giphy.com/media/yN5xPFm8klwMddZVKi/giphy.gif" alt=""></div>
+      <div class="cuadro"><img src="https://media0.giphy.com/media/yN5xPFm8klwMddZVKi/giphy.gif " alt=""></div>
+      <div class="cuadro"><img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyaDR2a25oNTZva251ZjNya3UwYjR5eWljZGJrZHY3NHF6YWo1NDE3bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ruw1bRYN0IXNS/giphy.gif " alt=""></div>
+      <div class="cuadro"><img src="https://media0.giphy.com/media/yN5xPFm8klwMddZVKi/giphy.gif " alt=""></div>
     </div>
   </div>
 
+  <!-- Brillos flotantes (script los genera) -->
   <script>
-    /* -------- TECLADO Y VALIDACIÓN PRIMER CÓDIGO -------- */
+    // Generar brillos aleatorios en fondo
+    function crearBrillos() {
+      for (let i = 0; i < 20; i++) {
+        const brillo = document.createElement('div');
+        brillo.classList.add('brillo');
+        brillo.style.left = Math.random() * 100 + 'vw';
+        brillo.style.top = Math.random() * 100 + 'vh';
+        document.body.appendChild(brillo);
+        animarBrillo(brillo);
+      }
+    }
+
+    function animarBrillo(el) {
+      const delay = Math.random() * 5;
+      const duration = 1.5 + Math.random() * 2;
+      el.style.animation = `fadeInOut ${duration}s ease-in-out ${delay}s infinite`;
+
+      // Keyframes dinámicas
+      const style = document.createElement('style');
+      style.innerHTML = `
+        @keyframes fadeInOut {
+          0%, 100% { opacity: 0; transform: scale(0); }
+          50% { opacity: 0.8; transform: scale(1); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    crearBrillos();
+
+    /* -------- TECLADO Y VALIDACIÓN DE CLAVE -------- */
     const input = document.getElementById('claveInput');
     const teclado = document.getElementById('teclado');
     const accederBtn = document.getElementById('accederBtn');
@@ -392,43 +643,15 @@
 
     accederBtn.addEventListener('click', () => {
       if (input.value === claveCorrecta) {
-        // ocultar primera pantalla y mostrar la pregunta
         document.getElementById('pantallaClave').classList.add('hidden');
-        document.getElementById('pantallaPregunta').classList.remove('hidden');
+        document.getElementById('contenidoPrincipal').style.display = 'flex';
+        iniciarTodo();
       } else {
         alert('Código incorrecto ❌');
       }
     });
 
-    /* -------- PREGUNTA: manejo de opciones -------- */
-    const botonesPregunta = document.querySelectorAll('#pantallaPregunta .opciones button');
-    const modalError = document.getElementById('modalError');
-    const cerrarModal = document.getElementById('cerrarModal');
-
-    botonesPregunta.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const resp = btn.dataset.resp;
-        if (resp === '3') {
-          // correcto -> mostrar contenido principal
-          document.getElementById('pantallaPregunta').classList.add('hidden');
-          document.getElementById('contenidoPrincipal').style.display = 'flex';
-          // inicializar contador y otras cosas
-          iniciarTodo();
-        } else {
-          // incorrecto -> mostrar modal pequeño adornado
-          modalError.style.display = 'block';
-          modalError.setAttribute('aria-hidden','false');
-        }
-      });
-    });
-
-    cerrarModal.addEventListener('click', () => {
-      modalError.style.display = 'none';
-      modalError.setAttribute('aria-hidden','true');
-      // volver a la pregunta (ya está visible)
-    });
-
-    /* -------- CONTADOR (desde 2023-11-10) -------- */
+    /* -------- CONTADOR -------- */
     const inicio = new Date("2023-11-10T00:00:00");
     const contador = document.getElementById("contador");
 
@@ -456,7 +679,7 @@
 
     let intervaloContador = null;
 
-    /* -------- MENSAJE TIPO MÁQUINA DE ESCRIBIR y GALERÍA -------- */
+    /* -------- MENSAJE TIPO MÁQUINA DE ESCRIBIR -------- */
     const btnSorpresa = document.getElementById("btnSorpresa");
     const mensaje = document.getElementById("mensaje");
     const imagenExtra = document.getElementById("imagenExtra");
@@ -493,7 +716,7 @@ Te amo con la intensidad de mil soles, con la ternura de mil lunas y con la eter
           clearInterval(escribirInterval);
           cursor.style.display = 'none';
         }
-      }, 45); // velocidad de escritura
+      }, 45);
     }
 
     btnSorpresa.addEventListener('click', () => {
@@ -513,21 +736,33 @@ Te amo con la intensidad de mil soles, con la ternura de mil lunas y con la eter
       }
     });
 
-    /* -------- INICIALIZAR TODO CUANDO SE ACCEDE CORRECTAMENTE -------- */
     function iniciarTodo() {
-      // inicio contador
       if (intervaloContador) clearInterval(intervaloContador);
       actualizarContador();
       intervaloContador = setInterval(actualizarContador, 1000);
-
-      // dejar cursor oculto hasta que pulse sorpresa
       cursor.style.display = 'none';
+
+      // ▶️ Reproducir música al acceder
+      const audio = document.getElementById('audioFondo');
+      audio.play().catch(e => {
+        console.log("Reproducción automática bloqueada. Necesita interacción del usuario.", e);
+      });
     }
 
-    /* -------- seguridad: reset si cierran/recargan (opcional) -------- */
-    // Si quieres que al recargar vuelva a pedir clave, no hagas nada.
-    // Si quieres auto-entrar, podríamos añadir lógica, pero lo dejamos como está.
+    // ▶️ Intentar reproducir al hacer clic en cualquier parte (por políticas de navegador)
+    document.addEventListener('click', function() {
+      const audio = document.getElementById('audioFondo');
+      audio.play().catch(() => {
+        console.log("Autoplay fue bloqueado. Se necesita un clic.");
+      });
+    }, { once: true });
 
+    document.addEventListener('touchstart', function() {
+      const audio = document.getElementById('audioFondo');
+      audio.play().catch(() => {
+        console.log("Touch autoplay bloqueado.");
+      });
+    }, { once: true });
   </script>
 </body>
 </html>
